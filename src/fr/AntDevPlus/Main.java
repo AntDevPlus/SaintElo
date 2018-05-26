@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Elo World");	
 		elo = new Elo(1589);
-		user = new EloUser("BsK", elo, "1");
+		user = new EloUser("LouposKoala", elo, "1");
 		System.out.println(user.getRankByUserElo(user));
 	}
 	
