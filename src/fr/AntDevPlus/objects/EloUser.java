@@ -6,8 +6,8 @@ public class EloUser {
 	public Elo ELO;
 	public String ID;
 	
-	Elo EloBI = new Elo(500);
-	Rank BronzeI = new Rank("Bronze I", EloBI);
+	public Elo EloBI = new Elo(500);
+	public Rank BronzeI = new Rank("Bronze I", EloBI);
 	
 	Elo EloBII = new Elo(600);
 	Rank BronzeII = new Rank("Bronze II", EloBII);
@@ -66,6 +66,42 @@ public class EloUser {
 	
 	public void setNAME(String nAME) {
 		NAME = nAME;
+	}
+	
+	public Rank getRank(EloUser user){	
+		
+		if(user.getELO() < 500){
+			return BronzeI;
+		}
+		if(user.getELO() < 600){
+			return BronzeII;
+		}
+		if(user.getELO() < 700){
+			return BronzeIII;
+		}
+		if(user.getELO() < 800){
+			return BronzeIV;
+		}
+		if(user.getELO() < 900){
+			return BronzeV;
+		}
+		if(user.getELO() < 1050){
+			return SilverI;
+		}
+		if(user.getELO() < 1200){
+			return SilverII;
+		}
+		if(user.getELO() < 1300){
+			return SilverIII;
+		}
+		if(user.getELO() < 1400){
+			return SilverIV;
+		}
+		if(user.getELO() < 1500){
+			return SilverV;
+		}
+		Rank legend = new Rank("legend", new Elo(132465789));
+		return legend;
 	}
 	
 	public String getRankByUserElo(EloUser user){	
